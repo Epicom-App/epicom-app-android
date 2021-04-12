@@ -1,0 +1,60 @@
+name: $(Date:yyyyMMdd)$(Rev:rr)
+
+trigger:
+  - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - checkout: self
+    path: s/android
+  - checkout: git://Freunde-Liberias-EBOLAPP-Common/Freunde-Liberias-EBOLAPP-Common@develop
+    path: s/common
+  - task: PowerShell@2
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+    inputs:
+      targetType: 'inline'
+      script: |
+        $url = "{0}{1}/_apis/build/builds/$env:BUILD_BUILDID/changes?api-version=5.1" -f $env:SYSTEM_COLLECTIONURI, $env:SYSTEM_TEAMPROJECT
+
+          $changelogPath = "$env:BUILD_ARTIFACTSTAGINGDIRECTORY/changelog"
+
+          $changes = Invoke-RestMethod -Uri $url -Method Get -Headers @{
+              Authorization = "Bearer $env:SYSTEM_ACCESSTOKEN"
+          }
+
+          Write-Host "Pipeline = $($changes | ConvertTo-Json -Depth 100)"
+
+          ## Generate Output
+          "Last Commits:" | Add-Content -Path $changelogPath
+          foreach($change in $changes.value) {
+            "* $($change.message)" | Add-Content -Path $changelogPath
+          }
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        ln -s $(Build.SourcesDirectory)/common/buildSrc $(Build.SourcesDirectory)/android/buildSrc
+  - task: DownloadSecureFile@1
+    name: keystore
+    inputs:
+      secureFile: 'release-keystore.jks'
+  - task: Gradle@2
+    displayName: 'gradlew check assembleRelease'
+    inputs:
+      workingDirectory: '$(Build.SourcesDirectory)/android/'
+      gradleWrapperFile: '$(Build.SourcesDirectory)/android/gradlew'
+      options: '--build-cache -PkeyStorePassword="$(keystore-password)" -PkeyAlias="$(key-alias)" -PkeyPassword="$(key-password)" -PkeyStoreLocation="$(keystore.secureFilePath)" -PversionCode=$(Build.BuildNumber) -PBaseURL="$(BaseUrl)" -PFilesURL="$(FilesURL)" -PresFileGoogleDriveId="$(resFileGoogleDriveId)"'
+      tasks: 'check bundleRelease'
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+    inputs:
+      SourceFolder: android/app/build/outputs/apk/
+      Contents: '**/*.aab'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      flattenFolders: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      ArtifactName: buildRelease

@@ -1,0 +1,26 @@
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  GRADLE_USER_HOME: $(Pipeline.Workspace)/.gradle
+
+steps:
+  - checkout: self
+    path: s/android
+  - checkout: git://Freunde-Liberias-EBOLAPP-Common/Freunde-Liberias-EBOLAPP-Common@develop
+    path: s/common
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        ln -s $(Build.SourcesDirectory)/common/buildSrc $(Build.SourcesDirectory)/android/buildSrc
+  - task: Gradle@2
+    inputs:
+      workingDirectory: '$(Build.SourcesDirectory)/android/'
+      gradleWrapperFile: '$(Build.SourcesDirectory)/android/gradlew'
+      tasks: 'check'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      javaHomeOption: 'JDKVersion'

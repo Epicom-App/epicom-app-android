@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/ui_debug_navigation_graph"
+    app:startDestination="@id/debugDest">
+
+    <fragment
+        android:id="@+id/debugDest"
+        android:name="org.ebolapp.ui.debug.DebugFragment"
+        android:label="DebugFragment" />
+
+    <fragment
+        android:id="@+id/logsDest"
+        android:name="org.ebolapp.ui.debug.logs.LogsFragment"
+        android:label="DebugLogsFragment" />
+
+    <fragment
+        android:id="@+id/jobLogsDest"
+        android:name="org.ebolapp.ui.debug.logs.LogsBackgroundJobsFragment"
+        android:label="DebugJobLogsFragment" />
+
+    <fragment
+        android:id="@+id/databaseDest"
+        android:name="org.ebolapp.ui.debug.database.DbFragment"
+        android:label="DebugDatabaseFragment" />
+
+    <fragment
+        android:id="@+id/casesDbDest"
+        android:name="org.ebolapp.ui.debug.database.tables.CasesDbFragment"
+        android:label="MapRegionCasesDbFragment" />
+
+    <fragment
+        android:id="@+id/legendDbDest"
+        android:name="org.ebolapp.ui.debug.database.tables.LegendDbFragment"
+        android:label="MapRegionLegendDbFragment" />
+
+    <fragment
+        android:id="@+id/locationsDbDest"
+        android:name="org.ebolapp.ui.debug.database.tables.UserLocationsFragment"
+        android:label="UserLocationsFragment" />
+
+    <fragment
+        android:id="@+id/visitsDbDest"
+        android:name="org.ebolapp.ui.debug.database.tables.VisitsDbFragment"
+        android:label="VisitsDbFragment" />
+
+    <fragment
+        android:id="@+id/riskMatchesDbDest"
+        android:name="org.ebolapp.ui.debug.database.tables.RiskMatchesDbFragment"
+        android:label="RiskMatchesDbFragment" />
+
+    <fragment
+        android:id="@+id/riskMatchesNotifDest"
+        android:name="org.ebolapp.ui.debug.database.tables.RiskMatchesNotifDbFragment"
+        android:label="RiskMatchesNotifDbFragment" />
+
+</navigation>

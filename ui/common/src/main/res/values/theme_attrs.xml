@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="textAppearanceCustomH0" format="reference" />
+    <attr name="textAppearanceCustomH0Bold" format="reference" />
+    <attr name="textAppearanceCustomH1" format="reference" />
+    <attr name="textAppearanceCustomH1Bold" format="reference" />
+    <attr name="textAppearanceCustomH2" format="reference" />
+    <attr name="textAppearanceCustomH2Bold" format="reference" />
+    <attr name="textAppearanceCustomH3" format="reference" />
+    <attr name="textAppearanceCustomH3Bold" format="reference" />
+    <attr name="textAppearanceCustomH4" format="reference" />
+    <attr name="textAppearanceCustomParagraph" format="reference" />
+    <attr name="textAppearanceCustomParagraphSmall" format="reference" />
+    <attr name="textAppearanceCustomCaption" format="reference" />
+    <attr name="textAppearanceCustomCaptionBig" format="reference"/>
+    <attr name="textAppearanceCustomButton" format="reference" />
+    <attr name="textAppearanceCustomButtonSmall" format="reference" />
+
+    <attr name="colorTextPrimary" format="color" />
+    <attr name="colorTextSecondary" format="color" />
+
+</resources>

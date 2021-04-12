@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="ui_map_slider_value_from">0</integer>
+    <integer name="ui_map_slider_value_to">14</integer>
+    <integer name="ui_map_slider_step">1</integer>
+</resources>

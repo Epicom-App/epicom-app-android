@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="whiteBackgroundColor">@color/colorWhite</color>
+    <color name="colorStatusBar">@color/colorWhite</color>
+    <color name="colorNavigationBar">@color/colorWhite</color>
+    <color name="datesInfoColor">@color/datesInfoLight</color>
+    <color name="navBarTintColor">@color/colorMain</color>
+    <color name="dateAnnotationColor">@color/colorMain</color>
+    <color name="defaultBackgroundColor">@color/colorWhite</color>
+    <color name="defaultIconsColor">@color/colorMain</color>
+    <color name="defaultTextColor">@color/colorBlack</color>
+    <color name="secondaryTextColor">@color/colorSecondaryText</color>
+    <color name="lightTextColor">@color/colorWhite</color>
+    <color name="sliderScaleColor">@color/colorSliderScale</color>
+    <color name="tintMainColor">@color/colorMain</color>
+    <color name="mapStrokeColor">@color/colorWhite</color>
+    <color name="ic_launcher_background">@color/colorMain</color>
+</resources>

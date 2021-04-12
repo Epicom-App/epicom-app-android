@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorMain"/>
+        </shape>
+    </item>
+
+    <item
+        android:width="78dp"
+        android:height="136dp"
+        android:bottom="@dimen/space_62"
+        android:drawable="@drawable/splashscreen_logo"
+        android:gravity="center" />
+
+</layer-list>

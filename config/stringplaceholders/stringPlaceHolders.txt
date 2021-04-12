@@ -1,0 +1,13 @@
+{String1}=%1$s
+{String2}=%2$s
+{String3}=%3$s
+{Number1}=%1$d
+{Number2}=%2$d
+{Number3}=%3$d
+{DecNum1}=%1$d
+{FloatNum1Dig0}=%1$.0f
+{FloatNum1Dig1}=%1$.1f
+{FloatNum1Dig2}=%1$.2f
+{Ampersand}=&amp;
+{Quote}=\"
+{softHyphen}=\u200b
