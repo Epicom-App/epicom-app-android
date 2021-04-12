@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text appearances -->
+    <style name="TextAppearance.App.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.App.Text.Small" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.App.Text" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.App.Text.Big" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- Text appearances special -->
+
+    <style name="TextAppearance.App.H0" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TextAppearance.App.H0.Bold" parent="TextAppearance.App.H0">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.App.H1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.App.H1.Bold" parent="TextAppearance.App.H1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.App.H2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.App.H2.Bold" parent="TextAppearance.App.H2">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.App.H3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="TextAppearance.App.H3.Bold" parent="TextAppearance.App.H3">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.App.H4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.App.Paragraph" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.App.Paragraph.Small" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--  Text appearance on Buttons  -->
+    <style name="TextAppearance.App.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TextAppearance.App.Button.Small" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Should only be used to mark places where it was missed to set a correct text appearance -->
+    <style name="TextAppearance.DoNotUse" parent="">
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

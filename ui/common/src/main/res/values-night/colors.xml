@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="whiteBackgroundColor">@color/colorBlack</color>
+    <color name="colorStatusBar">@color/colorBlack</color>
+    <color name="colorNavigationBar">@color/colorBgDark</color>
+    <color name="datesInfoColor">@color/datesInfoDark</color>
+    <color name="navBarTintColor">@color/colorWhite</color>
+    <color name="dateAnnotationColor">@color/colorWhite</color>
+    <color name="defaultBackgroundColor">@color/colorBgDark</color>
+    <color name="defaultIconsColor">@color/colorWhite</color>
+    <color name="defaultTextColor">@color/colorWhite</color>
+    <color name="secondaryTextColor">@color/colorWhite</color>
+    <color name="lightTextColor">@color/colorBlack</color>
+    <color name="sliderScaleColor">@color/colorSecondaryText</color>
+    <color name="tintMainColor">@color/colorWhite</color>
+    <color name="mapStrokeColor">@color/colorBgDark</color>
+</resources>

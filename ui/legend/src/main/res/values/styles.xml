@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ui_legend_TextAppearance.Onboarding.Title" parent="TextAppearance.App.Text">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:color">@color/defaultTextColor</item>
+    </style>
+
+    <style name="ui_legend_TextAppearance.Onboarding.HighlightedText" parent="ui_onboarding_TextAppearance.Onboarding.MainText">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ui_legend_TextAppearance.Onboarding.MainText" parent="TextAppearance.App.Text">
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

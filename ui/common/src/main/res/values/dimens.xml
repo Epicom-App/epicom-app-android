@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- SPACING -->
+    <!--Keylines enable the consistent placement of elements outside of the layout grid.They are vertical lines that show where elements are placed in a design that doesn’t align to the grid.Keylines are determined by each element’s distance from the edge of the screen,measured in increments of 8dp. -->
+    <dimen name="keyline_1">8dp</dimen>
+    <dimen name="keyline_2">16dp</dimen>
+    <dimen name="keyline_3">24dp</dimen>
+    <dimen name="keyline_4">72dp</dimen>
+
+    <!--space refers to the space between UI elements.It’s an alternative spacing method to keylines, measured in increments of 8dp or 4dp. -->
+    <dimen name="space_0">2dp</dimen>
+    <dimen name="space_1">4dp</dimen>
+    <dimen name="space_2">8dp</dimen>
+    <dimen name="space_3">12dp</dimen>
+    <dimen name="space_4">16dp</dimen>
+    <dimen name="space_5">20dp</dimen>
+    <dimen name="space_6">24dp</dimen>
+    <dimen name="space_7">28dp</dimen>
+    <dimen name="space_8">32dp</dimen>
+    <dimen name="space_9">36dp</dimen>
+    <dimen name="space_10">40dp</dimen>
+    <dimen name="space_11">44dp</dimen>
+    <dimen name="space_12">48dp</dimen>
+    <dimen name="space_13">52dp</dimen>
+    <dimen name="space_14">56dp</dimen>
+    <dimen name="space_62">248dp</dimen>
+
+    <!-- corners-->
+    <dimen name="corner_radius">8dp</dimen>
+
+    <!-- Elevation  -->
+    <dimen name="elevation_1">1dp</dimen>
+    <dimen name="elevation_2">2dp</dimen>
+    <dimen name="elevation_3">4dp</dimen>
+
+</resources>

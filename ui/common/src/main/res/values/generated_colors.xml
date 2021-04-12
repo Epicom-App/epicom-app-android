@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+GENERATED - DO NOT MODIFY - use StringResGen instead.
+
+Created by StringResGen.
+-->
+<resources>
+	<color name="colorBlue">#007aff</color>
+	<color name="colorMain">#244260</color>
+	<color name="colorLocation">#4db7dd</color>
+	<color name="colorBlack">#000000</color>
+	<color name="colorWhite">#ffffff</color>
+	<color name="colorFillGrey">#808080</color>
+	<color name="colorFillSecondaryColor">#29293a</color>
+	<color name="colorFillAccentColor">#3a80d1</color>
+	<color name="colorFillPrimaryBase">#010d0e</color>
+	<color name="colorSliderScale">#E6e3e8ea</color>
+	<color name="colorSecondaryText">#993C4043</color>
+	<color name="colorRed">#be6161</color>
+	<color name="colorBgDark">#1a1a1a</color>
+	<color name="datesInfoLight">#99ffffff</color>
+	<color name="datesInfoDark">#99000000</color>
+</resources>

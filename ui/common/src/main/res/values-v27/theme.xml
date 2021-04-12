@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DayNight.Theme.EbolaApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:statusBarColor">@color/colorStatusBar</item>
+        <item name="android:navigationBarColor">@color/colorNavigationBar</item>
+        <item name="android:windowLightStatusBar">@bool/lightStatusBar</item>
+        <item name="android:windowLightNavigationBar">@bool/lightNavigationBar</item>
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/tintMainColor</item>
+        <item name="colorPrimaryVariant">@color/tintMainColor</item>
+        <item name="colorOnPrimary">@color/lightTextColor</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/tintMainColor</item>
+        <item name="colorSecondaryVariant">@color/tintMainColor</item>
+        <item name="colorOnSecondary">@color/colorBlack</item>
+
+        <item name="colorTextPrimary">?colorOnSurface</item>
+        <item name="colorTextSecondary">?colorOnBackground</item>
+
+        <item name="colorError">@color/colorRed</item>
+
+        <!-- Fonts -->
+        <item name="textAppearanceCustomH0">@style/TextAppearance.App.H0</item>
+        <item name="textAppearanceCustomH0Bold">@style/TextAppearance.App.H0.Bold</item>
+        <item name="textAppearanceCustomH1">@style/TextAppearance.App.H1</item>
+        <item name="textAppearanceCustomH1Bold">@style/TextAppearance.App.H1.Bold</item>
+        <item name="textAppearanceCustomH2">@style/TextAppearance.App.H2</item>
+        <item name="textAppearanceCustomH2Bold">@style/TextAppearance.App.H2.Bold</item>
+        <item name="textAppearanceCustomH3">@style/TextAppearance.App.H3</item>
+        <item name="textAppearanceCustomH3Bold">@style/TextAppearance.App.H3.Bold</item>
+        <item name="textAppearanceCustomH4">@style/TextAppearance.App.H4</item>
+        <item name="textAppearanceCustomParagraph">@style/TextAppearance.App.Paragraph</item>
+        <item name="textAppearanceCustomParagraphSmall">@style/TextAppearance.App.Paragraph.Small
+        </item>
+        <item name="textAppearanceCustomCaption">@style/TextAppearance.App.Caption</item>
+        <item name="textAppearanceCustomButton">@style/TextAppearance.App.Button</item>
+        <item name="textAppearanceCustomButtonSmall">@style/TextAppearance.App.Button.Small</item>
+        <item name="textAppearanceCustomCaptionBig">@style/TextAppearance.App.Text.Big</item>
+
+    </style>
+</resources>

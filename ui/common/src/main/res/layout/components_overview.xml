@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/space_4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|bottom"
+                android:text="Test" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|bottom"
+                android:enabled="false"
+                android:text="Test" />
+
+        </LinearLayout>
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:checked="true"
+            android:layout_marginTop="@dimen/space_8"
+            tools:text="Checkbox checked" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:checked="true"
+            android:enabled="false"
+            tools:text="Checkbox checked disabled" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:checked="false"
+            tools:text="Checkbox unchecked" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:checked="false"
+            android:enabled="false"
+            tools:text="Checkbox unchecked disabled" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Test">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="AAA" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:text="Headline1"
+            android:textAppearance="?textAppearanceCustomH1"
+            android:textColor="?colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Headline1 disabled"
+            android:textAppearance="?textAppearanceCustomH1"
+            android:textColor="?colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Headline2"
+            android:textAppearance="?textAppearanceCustomH2"
+            android:textColor="?colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Headline2 disabled"
+            android:textAppearance="?textAppearanceCustomH2"
+            android:textColor="?colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:text="Headline2"
+            android:textAppearance="?textAppearanceCustomH2"
+            android:textColor="?colorSecondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Headline2 disabled"
+            android:textAppearance="?textAppearanceCustomH2"
+            android:textColor="?colorSecondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Headline4"
+            android:textAppearance="?textAppearanceCustomH4"
+            android:textColor="?colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Headline4 disabled"
+            android:textAppearance="?textAppearanceCustomH4"
+            android:textColor="?colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Paragraph title"
+            android:textAppearance="?textAppearanceCustomParagraph"
+            android:textColor="?colorPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Paragraph title disabled"
+            android:textAppearance="?textAppearanceCustomParagraph"
+            android:textColor="?colorPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:text="Paragraph primary"
+            android:textAppearance="?textAppearanceCustomParagraph"
+            android:textColor="?colorTextPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Paragraph primary disabled"
+            android:textAppearance="?textAppearanceCustomParagraph"
+            android:textColor="?colorTextPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:text="Paragraph secondary"
+            android:textAppearance="?textAppearanceCustomParagraph"
+            android:textColor="?colorTextSecondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Paragraph secondary disabled"
+            android:textAppearance="?textAppearanceCustomParagraph"
+            android:textColor="?colorTextSecondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            android:text="Paragraph small primary"
+            android:textAppearance="?textAppearanceCustomParagraphSmall"
+            android:textColor="?colorTextPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paragraph small primary disabled"
+            android:textAppearance="?textAppearanceCustomParagraphSmall"
+            android:enabled="false"
+            android:textColor="?colorTextPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paragraph small secondary"
+            android:layout_marginTop="@dimen/space_4"
+            android:textAppearance="?textAppearanceCustomParagraphSmall"
+            android:textColor="?colorTextSecondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paragraph small secondary disabled"
+            android:textAppearance="?textAppearanceCustomParagraphSmall"
+            android:enabled="false"
+            android:textColor="?colorTextSecondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Caption"
+            android:textAppearance="?textAppearanceCustomCaption"
+            android:textColor="?colorOnSurface" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Caption disabled"
+            android:textAppearance="?textAppearanceCustomCaption"
+            android:textColor="?colorOnSurface" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

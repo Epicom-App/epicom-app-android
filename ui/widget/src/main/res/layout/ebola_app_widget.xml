@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentRoot"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="14dp"
+    android:paddingEnd="14dp"
+    android:paddingTop="10dp"
+    android:minHeight="196dp"
+    android:background="@drawable/widget_background">
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="@color/defaultTextColor"
+        android:visibility="gone"
+        tools:text="error"/>
+
+    <TextView
+        android:id="@+id/region_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:lines="1"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:textColor="@color/tintMainColor"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:fadingEdge="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        tools:text="Leipzig"
+        android:singleLine="true" >
+        <requestFocus android:duplicateParentState="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+    </TextView>
+
+    <TextView
+        android:id="@+id/region_disease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/region_name"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/defaultTextColor"
+        android:lines="1"
+        android:ellipsize="end"
+        tools:text="Covid-19"/>
+
+    <LinearLayout
+        android:id="@+id/region_overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/region_disease"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/widget_rounded_border">
+
+            <TextView
+                android:id="@+id/region_cases_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/defaultTextColor"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:paddingStart="4dp"
+                android:text="@string/map_region_cases"
+                tools:ignore="RtlSymmetry,SmallSp" />
+
+            <TextView
+                android:id="@+id/region_cases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/region_cases_label"
+                android:paddingEnd="12dp"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/defaultTextColor"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                tools:text="-"
+                tools:ignore="RtlSymmetry" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/region_severity_overview"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp">
+
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/widget_rounded_fill"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/region_severity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingStart="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/map_region_danger_level"
+                tools:ignore="RtlSymmetry,SmallSp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:paddingEnd="12dp"
+                tools:ignore="RelativeOverlap,RtlSymmetry">
+
+            <TextView
+                android:id="@+id/region_severity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                tools:text="-" />
+            <TextView
+                android:id="@+id/region_max_severity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                tools:text="/-"
+                tools:ignore="SmallSp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/region_legend_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_1"
+            android:lines="2"
+            android:ellipsize="end"
+            android:textSize="10sp"
+            android:textColor="@color/secondaryTextColor"
+            tools:ignore="SmallSp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
