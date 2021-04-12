@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/date_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?textAppearanceCustomH1Bold"
+            android:textColor="?colorOnSurface"
+            android:text="@string/map_slider_title"
+            android:layout_marginTop="@dimen/space_4"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/date_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:stepSize="@integer/ui_map_slider_step"
+            android:value="@integer/ui_map_slider_value_to"
+            android:valueFrom="@integer/ui_map_slider_value_from"
+            android:valueTo="@integer/ui_map_slider_value_to"
+            android:layout_marginTop="@dimen/space_2"
+            android:layout_marginStart="@dimen/space_1"
+            android:layout_marginEnd="@dimen/space_1"
+            app:labelBehavior="floating"
+            app:thumbElevation="@dimen/elevation_3"
+            app:thumbRadius="12dp"
+            app:labelStyle="@style/App.Widget.MaterialComponents.Tooltip"
+            app:layout_constraintTop_toBottomOf="@id/date_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tickColorActive="@color/transparent"
+            app:tickColorInactive="@color/transparent"
+            app:trackColor="@color/transparent"
+            app:trackColorActive="@color/transparent"
+            app:trackColorInactive="@color/transparent" />
+
+        <TextView
+            android:id="@+id/date_label_fromday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_1"
+            android:layout_marginStart="@dimen/space_4"
+            android:textAppearance="?textAppearanceCaption"
+            android:textColor="?colorOnBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date_slider"
+            tools:text="@string/map_slider_days_ago" />
+
+        <TextView
+            android:id="@+id/date_label_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_1"
+            android:layout_marginEnd="@dimen/space_4"
+            android:textAppearance="?textAppearanceCaption"
+            android:textColor="?colorOnBackground"
+            android:text="@string/map_slider_today"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date_slider" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/date_picker_button"
+            style="@style/App.Widget.App.Button.Outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/keyline_2"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:layout_marginBottom="@dimen/space_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_label_fromday"
+            tools:text="Aug 19 2020" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ui_onboarding_bgcolor_top_1">@color/colorBlack</color>
+    <color name="ui_onboarding_bgcolor_bot_1">@color/colorMain</color>
+    <color name="ui_onboarding_bgcolor_top_2">@color/colorMain</color>
+    <color name="ui_onboarding_bgcolor_bot_2">@color/colorBlack</color>
+</resources>

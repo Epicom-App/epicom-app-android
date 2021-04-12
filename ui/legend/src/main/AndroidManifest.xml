@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.ebolapp.ui.legend">
+
+    <application>
+        <activity
+            android:name=".LegendActivity"
+            android:theme="@style/DayNight.Theme.EbolaApp" />
+    </application>
+
+</manifest>

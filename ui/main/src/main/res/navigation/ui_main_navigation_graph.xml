@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/mapDest">
+
+    <fragment
+        android:id="@+id/mapDest"
+        android:name="org.ebolapp.ui.map.MapFragment"
+        android:label="MapFragment" />
+
+    <fragment
+        android:id="@+id/loadingDest"
+        android:name="org.eboalapp.ui.main.LoadingFragment"
+        android:label="LoadingFragment" />
+
+    <fragment
+        android:id="@+id/onboardingDest"
+        android:name="org.ebolapp.ui.onboarding.OnboardingFragment"
+        android:label="Onboarding" />
+
+</navigation>

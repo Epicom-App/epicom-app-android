@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_settings_lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis eros, cursus accumsan nisi pellentesque, volutpat scelerisque augue. Suspendisse gravida nec nunc ac commodo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin porttitor eros urna, sed sagittis est maximus vel. Nulla et mauris ut augue tempus tempus non ut lacus. Sed a diam quam. Curabitur suscipit purus vehicula, feugiat mi nec, laoreet magna. Donec vitae blandit nisl, vitae accumsan neque. Proin in nibh nibh. Proin in neque vitae est sagittis fringilla. Nulla fermentum tellus dignissim, molestie diam ac, accumsan dui. Donec ut lorem tincidunt mauris scelerisque mollis.
+    </string>
+</resources>

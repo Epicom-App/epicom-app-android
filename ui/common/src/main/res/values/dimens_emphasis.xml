@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TODO change name -->
+    <!-- toolbar title text -->
+    <item name="alpha_emphasis_xxx" format="float" type="dimen">0.8</item>
+
+    <!-- icons, primary text, text field outlines etc. in focused state -->
+    <item name="alpha_emphasis_high" format="float" type="dimen">0.6</item>
+
+    <!-- secondary text -->
+    <item name="alpha_emphasis_medium" format="float" type="dimen">0.45</item>
+
+    <!-- hint text -->
+    <item name="alpha_emphasis_low" format="float" type="dimen">0.24</item>
+
+    <!-- button and text field outlines etc. in normal state -->
+    <item name="alpha_emphasis_control_normal" format="float" type="dimen">0.14</item>
+
+    <!-- disabled state -->
+    <item name="alpha_emphasis_disabled" format="float" type="dimen">0.24</item>
+
+    <!-- alpha for divider view-->
+    <item name="alpha_emphasis_divider" format="float" type="dimen">0.20</item>
+
+    <!-- alpha for some headers -->
+    <item name="alpha_emphasis_header" format="float" type="dimen">0.05</item>
+
+    <!--
+    default values
+    Text:
+        High emphasis:      87%
+        Medium emphasis:    60%
+        Disabled:           38%
+    Helper text:
+        High emphasis:      87%
+        Medium emphasis:    60%
+        Error:              100% (error color)
+    Icons & symbols:
+        Active:             87%
+        Inactive:           60%
+        Disabled:           38%
+    -->
+</resources>

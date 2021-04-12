@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_onboarding_bgcolor_bot_1"
+    android:fillViewport="true"
+    android:paddingBottom="@dimen/ui_onboarding_tabLayoutHeight"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/ui_onboarding_bgcolor_top_1"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewIcon1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewDiagonalBackground"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewIcon1"
+            app:srcCompat="@drawable/ui_legend_bg_diagional_tl"
+            app:tint="@color/ui_onboarding_bgcolor_top_1" />
+
+        <TextView
+            android:id="@+id/textViewHead"
+            style="@style/ui_onboarding_TextAppearance.Onboarding.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_4"
+            android:paddingEnd="@dimen/space_4"
+            android:text="@string/onboarding_title_covidMap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textViewInfoText"
+            style="@style/ui_onboarding_TextAppearance.Onboarding.MainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_4"
+            android:text="@string/onboarding_info_calendar"
+            android:textColor="?colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewHead" />
+
+        <ImageView
+            android:id="@+id/imageViewIcon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewDiagonalBackground"
+            app:layout_constraintEnd_toEndOf="@id/imageViewIcon1"
+            app:layout_constraintStart_toStartOf="@id/imageViewIcon1"
+            app:srcCompat="@drawable/ui_onboarding_arrow_down"
+            app:tint="@color/ui_onboarding_bgcolor_top_1" />
+
+        <ImageView
+            android:id="@+id/imageViewIcon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewInfoText"
+            app:srcCompat="@drawable/ui_onboarding_calendar_icon"/>
+
+        <ImageView
+            android:id="@+id/imageViewDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_8"
+            android:paddingTop="@dimen/space_4"
+            android:paddingEnd="@dimen/space_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewIcon2"
+            app:srcCompat="@drawable/ui_onboarding_date_picker" />
+
+        <TextView
+            android:id="@+id/textViewFurther"
+            style="@style/ui_onboarding_TextAppearance.Onboarding.MainText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_4"
+            android:lines="4"
+            android:maxWidth="160dp"
+            android:text="@string/onboarding_info_locations"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewDatePicker"
+            app:layout_constraintVertical_bias="1" />
+
+        <ImageView
+            android:id="@+id/imageViewIcon3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/imageViewRiskPreview"
+            app:layout_constraintEnd_toEndOf="@id/imageViewRiskPreview"
+            app:layout_constraintTop_toTopOf="@id/textViewFurther"
+            app:layout_constraintVertical_bias="0.8"
+            app:srcCompat="@drawable/ui_onboarding_arrow_up_curved"
+            app:tint="@color/colorWhite"/>
+
+        <ImageView
+            android:id="@+id/imageViewRiskPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewFurther"
+            app:srcCompat="@drawable/ui_onboarding_map_preview_zoomed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

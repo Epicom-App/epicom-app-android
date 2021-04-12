@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ui_map_card_height">180dp</dimen>
+    <dimen name="ui_map_seek_bar_height">40dp</dimen>
+    <dimen name="ui_map_slider_track_height">8dp</dimen>
+
+    <dimen name="ui_map_control_width">60dp</dimen>
+    <dimen name="ui_map_control_height">48dp</dimen>
+
+</resources>
