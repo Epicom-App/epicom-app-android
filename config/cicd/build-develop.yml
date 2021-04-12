@@ -9,7 +9,7 @@ pool:
 steps:
   - checkout: self
     path: s/android
-  - checkout: git://Epicom-App/epicom-app-kotlin-multiplatform@develop
+  - checkout: git://epicom-app-kotlin-multiplatform@develop
     path: s/common
   - task: PowerShell@2
     env:
