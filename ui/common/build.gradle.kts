@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import config.AppAndroidConfig
 
 plugins {
@@ -5,6 +6,8 @@ plugins {
     kotlin("android")
     //id("de.af.resgen")
 }
+
+// TODO: Commented out because af repository is insecure (http) and the new gradle rejects that
 
 // This is for each project module
 android {
@@ -38,7 +41,7 @@ dependencies {
 
 //resGen {
 //
-//    fileId = project.findProperty("resFileGoogleDriveId") as? String ?: "notset"
+//    fileId = getGradleLocalProperty("resFileGoogleDriveId") as? String ?: "notset"
 //
 //    strings(closureOf<de.appsfactory.ResGenExtension.Config> {
 //        keysColumn = "B"
@@ -61,3 +64,8 @@ dependencies {
 //    tracking(closureOf<de.appsfactory.ResGenExtension.Config> {})
 //
 //}
+
+
+// Define local variables in local.properties
+fun getGradleLocalProperty(key: String): String =
+    gradleLocalProperties(rootDir).getProperty(key) ?: "$key notset"
