@@ -6,10 +6,17 @@ pool:
 variables:
   GRADLE_USER_HOME: $(Pipeline.Workspace)/.gradle
 
+resources:
+  repositories:
+    - repository: GitHubCommonRepo
+      type: github
+      endpoint: Epicom-App
+      name: Epicom-App/epicom-app-kotlin-multiplatform
+
 steps:
   - checkout: self
     path: s/android
-  - checkout: git://Freunde-Liberias-EBOLAPP-Common/Freunde-Liberias-EBOLAPP-Common@develop
+  - checkout: GitHubCommonRepo
     path: s/common
   - task: Bash@3
     inputs:
