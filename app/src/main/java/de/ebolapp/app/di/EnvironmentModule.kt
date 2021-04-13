@@ -10,7 +10,6 @@ import org.ebolapp.db.DatabaseDriverFactory
 import org.ebolapp.db.DatabaseWrapper
 import org.ebolapp.features.staticPages.network.StaticPages
 import org.ebolapp.shared.network.NetworkApiParameterNames
-import org.ebolapp.shared.network.NoParametersStrategy
 import org.ebolapp.shared.network.TemplateParametersStrategy
 import org.koin.core.qualifier.Qualifier
 import org.koin.core.qualifier.QualifierValue
@@ -57,7 +56,7 @@ val environmentModule = module {
             DatabaseDriverFactory(context = get())
         )
     }
-    single(AppCenterSecretQualifier) { "e98b58b4-cdec-4085-b5fa-de8299812d3f" }
+    single(AppCenterSecretQualifier) { BuildConfig.APPCENTER_SECRET }
     // Resources
     single {
         // TODO add a general resource provider so that submodules can access app wide resources

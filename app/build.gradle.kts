@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import config.AppBuildConfig.quote
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -18,12 +19,6 @@ android {
         versionName = config.AppAndroidConfig.Application.versionName_displayed
         testInstrumentationRunner = config.AppAndroidConfig.TestRunner.default
         setProperty("archivesBaseName", "$applicationId-$versionCode-v$versionName")
-        buildConfigField(
-            "String",
-            "APPCENTER_SECRET",
-            // The APPCENTER_SECRET is defined in a pipeline variable
-            quote((project.findProperty("appcenterSecret") as? String) ?: "")
-        )
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
@@ -65,9 +60,19 @@ android {
                 buildConfigField(
                     type = key.type,
                     name = key.name,
-                    value = project.findProperty(key.name) as? String ?: quote("Define ${key.name} variable in the debug build pipeline")
+                    value = quote(
+                        project.findProperty(key.name) as? String ?: getLocalProperty(key)
+                    )
                 )
             }
+            buildConfigField(
+                "String",
+                "APPCENTER_SECRET",
+                quote(
+                    (project.findProperty("appcenterSecret") as? String)
+                        ?: getGradleLocalProperty("AppCenterSecret_debug")
+                )
+            )
         }
         getByName(config.AppBuildConfig.Release.name) {
             isMinifyEnabled = false
@@ -78,7 +83,9 @@ android {
                 buildConfigField(
                     type = key.type,
                     name = key.name,
-                    value = project.findProperty(key.name) as? String ?: quote("Define ${key.name} variable in the prod build pipeline")
+                    value = quote(
+                        project.findProperty(key.name) as? String ?: getLocalProperty(key)
+                    )
                 )
             }
         }
@@ -149,10 +156,29 @@ dependencies {
     debugImplementation(Libs.CanaryLeak.debugCore)
 }
 
-fun versionCode() : Int {
+fun versionCode(): Int {
     return (if (project.hasProperty("versionCode")) {
         project.property("versionCode") as String
     } else {
         LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd00"))
     }).toInt()
+}
+
+// Define local variables in local.properties
+fun getGradleLocalProperty(key: String): String =
+    gradleLocalProperties(rootDir).getProperty(key) ?: "$key notset"
+
+fun getLocalProperty(key: config.EndpointKey, buildType: String = "debug"): String {
+    return when (key) {
+        config.EndpointKey.BaseURL -> when (buildType) {
+            config.AppBuildConfig.Release.name -> getGradleLocalProperty("BaseURL_prod")
+            config.AppBuildConfig.Debug.name -> getGradleLocalProperty("BaseURL_debug")
+            else -> throw javax.naming.ConfigurationException("BaseUrl undefined for build type $buildType")
+        }
+        config.EndpointKey.FilesURL -> when (buildType) {
+            config.AppBuildConfig.Release.name -> getGradleLocalProperty("FilesURL_prod")
+            config.AppBuildConfig.Debug.name -> getGradleLocalProperty("FilesURL_debug")
+            else -> throw javax.naming.ConfigurationException("FilesUrl undefined for build type $buildType")
+        }
+    }
 }
