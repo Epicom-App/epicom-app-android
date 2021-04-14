@@ -1,5 +1,7 @@
 name: $(Date:yyyyMMdd)$(Rev:rr)
 
+pr: none
+
 trigger:
   - develop
 
