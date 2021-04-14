@@ -12,6 +12,7 @@ resources:
       type: github
       endpoint: Epicom-App
       name: Epicom-App/epicom-app-kotlin-multiplatform
+      ref: develop
 
 steps:
   - checkout: self
