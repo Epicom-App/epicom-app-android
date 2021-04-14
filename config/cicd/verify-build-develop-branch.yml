@@ -1,3 +1,7 @@
+pr:
+  - main
+  - develop
+
 trigger: none
 
 pool:
