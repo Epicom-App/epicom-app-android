@@ -88,6 +88,11 @@ android {
                     )
                 )
             }
+            buildConfigField(
+                    "String",
+                    "APPCENTER_SECRET",
+                    quote("unused")
+            )
         }
     }
     packagingOptions {
