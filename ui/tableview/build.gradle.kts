@@ -25,6 +25,7 @@ android {
     }
     resourcePrefix("ui_tableview_")
     buildFeatures.viewBinding = true
+    lintOptions.isAbortOnError = false
 }
 
 dependencies {
