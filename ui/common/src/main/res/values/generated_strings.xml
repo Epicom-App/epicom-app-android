@@ -13,10 +13,14 @@ Created by StringResGen.
 	<string name="no_internet_error_message">Data could not be loaded</string>
 	<string name="error_default_message">Something went wrong.\nPlease try again.</string>
 	<string name="please_wait_info">Please, wait.\nIt can take a few minutes...</string>
+	<string name="permissions_location_legal_info_title">Consent to the processing of location data</string>
+	<string name="permissions_location_legal_info_info">I hereby declare my express consent to the collection and processing of my location data by EPICOM for the purpose of comparison with locations that have been assessed as risky. I have taken note of the information on the processing of my location data contained in the data protection declaration.\n\nI can revoke my consent at any time in the future. The legality of the processing of my location data up to the point of revocation remains unaffected.</string>
 	<string name="ok_button">Ok</string>
 	<string name="open_settings_button">Open Settings</string>
 	<string name="refresh_button">Refresh</string>
 	<string name="close_button">Close</string>
+	<string name="accept_button">Accept</string>
+	<string name="decline_button">Decline</string>
 	<string name="map_navigation_title">EPICOM</string>
 	<string name="map_tabBar_title">Map</string>
 	<string name="map_slider_days_ago">%1$d days ago</string>

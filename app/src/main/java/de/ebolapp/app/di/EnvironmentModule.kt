@@ -65,8 +65,12 @@ val environmentModule = module {
             rationalMessageResId = R.string.location_rationale_message,
             settingsTitleResId = R.string.no_location_title,
             settingsMessageResId = R.string.no_location_info,
+            consentTitleResId = R.string.permissions_location_legal_info_title,
+            consentMessageResId = R.string.permissions_location_legal_info_info,
             okButton = R.string.ok_button,
-            openSettingsButton = R.string.open_settings_button
+            openSettingsButton = R.string.open_settings_button,
+            acceptButton = R.string.accept_button,
+            declineButton = R.string.decline_button
         )
     }
     factory<JsonFileReader>(StatesJsonQualifier) {
