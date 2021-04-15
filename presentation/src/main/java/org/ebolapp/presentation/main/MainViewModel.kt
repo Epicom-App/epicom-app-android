@@ -46,8 +46,11 @@ class MainViewModel(
 
     suspend fun ensurePermissionsGranted() {
         requestPermissionUseCase.invoke(
-            Permission.BACKGROUND_LOCATION,
-            Permission.FOREGROUND_LOCATION
+            permissions = setOf(
+                Permission.BACKGROUND_LOCATION,
+                Permission.FOREGROUND_LOCATION
+            ),
+            force = false
         )
     }
 

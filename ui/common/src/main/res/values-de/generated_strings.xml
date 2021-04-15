@@ -13,10 +13,14 @@ Created by StringResGen.
 	<string name="no_internet_error_message">Daten konnten nicht geladen werden</string>
 	<string name="error_default_message">Etwas ist schief gelaufen.\nBitte versuche es erneut.</string>
 	<string name="please_wait_info">Bitte warten.\nDer Ladevorgang kann einige Minuten dauern...</string>
+	<string name="permissions_location_legal_info_title">Einwilligung in die Verarbeitung von Standortdaten</string>
+	<string name="permissions_location_legal_info_info">Ich erkläre hiermit meine ausdrückliche Einwilligung in die Erhebung und Verarbeitung meiner Standortdaten durch EPICOM für Zwecke des Abgleichs mit als riskant bewerteten Standorten. Die in der Datenschutzerklärung enthaltenen Informationen zur Verarbeitung meiner Standortdaten habe ich zur Kenntnis genommen.\n\nIn kann meine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgte Verarbeitung meiner Standortdaten bleibt unberührt.</string>
 	<string name="ok_button">Ok</string>
 	<string name="open_settings_button">Einstellungen</string>
 	<string name="refresh_button">Aktualisieren</string>
 	<string name="close_button">Schließen</string>
+	<string name="accept_button">Akzeptieren</string>
+	<string name="decline_button">Ablehnen</string>
 	<string name="map_navigation_title">EPICOM</string>
 	<string name="map_tabBar_title">Karte</string>
 	<string name="map_slider_days_ago">Vor %1$d Tagen</string>
