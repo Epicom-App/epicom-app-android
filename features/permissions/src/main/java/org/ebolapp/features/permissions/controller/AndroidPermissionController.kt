@@ -21,7 +21,15 @@ internal class AndroidPermissionController(
     private val context: Context,
     private val resourceConfiguration: ResourceConfiguration
 ) : PermissionController, ActivityCompat.OnRequestPermissionsResultCallback, Logging {
+
+    companion object {
+        private const val SHARED_PREFERENCES_NAME = "permissions"
+        private const val SHARED_PREFERENCES_CONSENT_DECLINED = "permissions.consent.declined"
+        private const val SHARED_PREFERENCES_CONSENT_ACCEPTED = "permissions.consent.accepted"
+    }
+
     override val availablePermissions = MutableStateFlow(loadAvailablePermissions())
+    private val sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
 
     var activityHolder: WeakReference<Activity>? = null
 
@@ -32,13 +40,45 @@ internal class AndroidPermissionController(
         )
     }
 
-    override suspend fun requestPermissions(vararg permissions: Permission) {
+    override suspend fun requestPermissions(permissions: Set<Permission>, force: Boolean) {
         val activity = activityHolder?.get() ?: return
 
+        // Check if legal terms consent was already declined
+        val consentDeclined = sharedPreferences.getBoolean(SHARED_PREFERENCES_CONSENT_DECLINED, false)
+        if (consentDeclined && !force) return
+
         val requiredAndroidPermissions =
-            permissions.filter { !hasPermission(it) }.map { it.toAndroidPermission() }.flatten()
+            permissions.asSequence().filter { !hasPermission(it) }.map { it.toAndroidPermission() }.flatten()
                 .distinct().toMutableSet()
         if (requiredAndroidPermissions.isEmpty()) return
+
+        // Check if legal terms consent was already accepted
+        val consentAccepted = sharedPreferences.getBoolean(SHARED_PREFERENCES_CONSENT_ACCEPTED, false)
+        if (consentAccepted) {
+            requestPermissions(requiredAndroidPermissions)
+        } else {
+            activity.showConsentLegalTermsDialog(
+                resourceConfiguration = resourceConfiguration,
+                onOk = {
+                    sharedPreferences.edit().apply {
+                        putBoolean(SHARED_PREFERENCES_CONSENT_ACCEPTED, true)
+                        putBoolean(SHARED_PREFERENCES_CONSENT_DECLINED, false)
+                    }.apply()
+                    requestPermissions(requiredAndroidPermissions)
+                },
+                onCancel = {
+                    sharedPreferences.edit().apply {
+                        putBoolean(SHARED_PREFERENCES_CONSENT_ACCEPTED, false)
+                        putBoolean(SHARED_PREFERENCES_CONSENT_DECLINED, true)
+                    }.apply()
+                }
+            )
+        }
+    }
+
+    private fun requestPermissions(requiredAndroidPermissions: MutableSet<String>) {
+
+        val activity = activityHolder?.get() ?: return
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R &&
             requiredAndroidPermissions.contains(ACCESS_BACKGROUND_LOCATION)
@@ -47,7 +87,6 @@ internal class AndroidPermissionController(
             // maybe requesting this permission should be part of another user flow?
             activity.showOpenPermissionSettingsDialog(
                 resourceConfiguration = resourceConfiguration,
-                onCancel = {},
                 onSettings = {
                     val intent = Intent(
                         Settings.ACTION_APPLICATION_DETAILS_SETTINGS,

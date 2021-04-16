@@ -24,12 +24,11 @@ fun Activity.showPermissionRationaleDialog(
         .show()
 }
 
-
 fun Activity.showOpenPermissionSettingsDialog(
     resourceConfiguration: ResourceConfiguration,
     onOk: () -> Unit = {},
     onSettings: () -> Unit = {},
-    onCancel: () -> Unit
+    onCancel: () -> Unit = {}
 ) {
     MaterialAlertDialogBuilder(this)
         .setTitle(resourceConfiguration.settingsTitleResId)
@@ -46,6 +45,27 @@ fun Activity.showOpenPermissionSettingsDialog(
             dialog.dismiss()
         }
         .setOnCancelListener { dialog ->
+            onCancel()
+            dialog.dismiss()
+        }
+        .create()
+        .show()
+}
+
+fun Activity.showConsentLegalTermsDialog(
+    resourceConfiguration: ResourceConfiguration,
+    onOk: () -> Unit,
+    onCancel: () -> Unit = {}
+) {
+    MaterialAlertDialogBuilder(this)
+        .setTitle(resourceConfiguration.consentTitleResId)
+        .setMessage(resourceConfiguration.consentMessageResId)
+        .setCancelable(true)
+        .setPositiveButton(resourceConfiguration.acceptButton) { dialog, _ ->
+            onOk()
+            dialog.dismiss()
+        }
+        .setNegativeButton(resourceConfiguration.declineButton) { dialog, _ ->
             onCancel()
             dialog.dismiss()
         }

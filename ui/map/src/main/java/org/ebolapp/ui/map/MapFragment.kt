@@ -214,6 +214,7 @@ class MapFragment : Fragment(R.layout.ui_map_fragment) {
             this?.mapDateText?.isVisible = new.isCalendarButtonChecked
             this?.mapRiskBadge?.isVisible = new.sliderState.exposedDays.count() > 0
             this?.mapRiskBadgeText?.text = new.sliderState.exposedDays.count().toString()
+            this?.mapCurrentLocation?.isVisible = new.hasPermissionsForLocation
         }
     }
 

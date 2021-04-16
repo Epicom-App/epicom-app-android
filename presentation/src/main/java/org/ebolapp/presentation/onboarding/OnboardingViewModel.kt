@@ -53,8 +53,11 @@ class OnboardingViewModel(
     fun requestLocationPermission() {
         viewModelScope.launch {
             requestPermissionUseCase.invoke(
-                Permission.BACKGROUND_LOCATION,
-                Permission.FOREGROUND_LOCATION
+                permissions = setOf(
+                    Permission.BACKGROUND_LOCATION,
+                    Permission.FOREGROUND_LOCATION
+                ),
+                force = true
             )
         }
     }

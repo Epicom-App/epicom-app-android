@@ -6,5 +6,5 @@ import org.ebolapp.features.permissions.models.Permission
 interface PermissionController {
     fun init()
     val availablePermissions: Flow<Set<Permission>>
-    suspend fun requestPermissions(vararg permissions: Permission)
+    suspend fun requestPermissions(permissions: Set<Permission>, force: Boolean)
 }
