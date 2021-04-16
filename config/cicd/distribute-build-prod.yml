@@ -1,4 +1,4 @@
-  name: $(Date:yyyyMMdd)$(Rev:rr)
+name: $(Date:yyyyMMdd)$(Rev:rr)
 
 pr: none
 
