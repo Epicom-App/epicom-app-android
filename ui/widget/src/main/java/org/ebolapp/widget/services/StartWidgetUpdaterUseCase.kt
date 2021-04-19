@@ -2,6 +2,8 @@ package org.ebolapp.widget.services
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.core.content.ContextCompat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
@@ -51,7 +53,10 @@ internal class StartWidgetUpdaterUseCaseImpl(
     }
 
     private fun updateWidget() {
-        context.stopService(Intent(context, EbolaAppWidgetUpdateService::class.java))
-        context.startService(Intent(context, EbolaAppWidgetUpdateService::class.java))
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
+            context.startService(Intent(context, EbolaAppWidgetUpdateService::class.java))
+        } else {
+            context.startForegroundService(Intent(context, EbolaAppWidgetUpdateService::class.java))
+        }
     }
 }
