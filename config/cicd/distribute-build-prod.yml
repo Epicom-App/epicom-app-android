@@ -56,7 +56,7 @@ steps:
     inputs:
       workingDirectory: '$(Build.SourcesDirectory)/android/'
       gradleWrapperFile: '$(Build.SourcesDirectory)/android/gradlew'
-      options: '--build-cache -PkeyStorePassword="$(keystore-password)" -PkeyAlias="$(key-alias)" -PkeyPassword="$(key-password)" -PkeyStoreLocation="$(keystore.secureFilePath)" -PversionCode=$(Build.BuildNumber) -PBaseURL="$(BaseUrl)" -PFilesURL="$(FilesURL)" -PresFileGoogleDriveId="$(resFileGoogleDriveId)"'
+      options: '--build-cache -PkeyStorePassword="$(keystore-password)" -PkeyAlias="$(key-alias)" -PkeyPassword="$(key-password)" -PkeyStoreLocation="$(keystore.secureFilePath)" -PversionCode=$(Build.BuildNumber) -PBaseURL="$(BaseUrl)" -PFilesURL="$(FilesURL)" -PresFileGoogleDriveId="$(resFileGoogleDriveId)" -Pmaps_api_key="$(maps_api_key)"'
       tasks: 'check assembleRelease'
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
