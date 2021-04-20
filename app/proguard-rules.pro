@@ -26,8 +26,8 @@
 ## Kotlinx serialization
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.SerializationKt
--keep,includedescriptorclasses class de.ebolapp.**$$serializer { *; } # <-- change package name to your app's
--keepclassmembers class de.ebola** { # <-- change package name to your app's
+-keep,includedescriptorclasses class de.ebolapp**$$serializer { *; } # <-- change package name to your app's
+-keepclassmembers class de.ebolapp** { # <-- change package name to your app's
     *** Companion;
 }
 -keepclasseswithmembers class de.ebolapp** { # <-- change package name to your app's
@@ -37,7 +37,7 @@
 ## Kotlinx serialization
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.SerializationKt
--keep,includedescriptorclasses class org.ebolapp.**$$serializer { *; } # <-- change package name to your app's
+-keep,includedescriptorclasses class org.ebolapp**$$serializer { *; } # <-- change package name to your app's
 -keepclassmembers class org.ebolapp** { # <-- change package name to your app's
     *** Companion;
 }
