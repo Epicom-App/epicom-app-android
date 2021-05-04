@@ -37,7 +37,7 @@
 
         <TextView
             android:id="@+id/textViewHead"
-            style="@style/ui_onboarding_TextAppearance.Onboarding.Title"
+            style="@style/ui_legend_TextAppearance.Onboarding.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/space_4"
@@ -50,7 +50,7 @@
 
         <TextView
             android:id="@+id/textViewInfoText"
-            style="@style/ui_onboarding_TextAppearance.Onboarding.MainText"
+            style="@style/ui_legend_TextAppearance.Onboarding.MainText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/space_4"

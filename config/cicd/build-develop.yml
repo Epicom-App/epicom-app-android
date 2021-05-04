@@ -53,7 +53,7 @@ steps:
       workingDirectory: '$(Build.SourcesDirectory)/android/'
       gradleWrapperFile: '$(Build.SourcesDirectory)/android/gradlew'
       tasks: 'assembleDebug'
-      options: '-PversionCode=$(Build.BuildNumber) -PappcenterSecret=$(APPCENTER_SECRET) -PBaseURL="$(BaseUrl)" -PFilesURL="$(FilesURL)" -PresFileGoogleDriveId="$(resFileGoogleDriveId)"'
+      options: '-PversionCode=$(Build.BuildNumber) -PappcenterSecret=$(APPCENTER_SECRET) -PBaseURL="$(BaseUrl)" -PFilesURL="$(FilesURL)" -PresFileGoogleDriveId="$(resFileGoogleDriveId)" -Pmaps_api_key="$(maps_api_key)"'
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
     inputs:
