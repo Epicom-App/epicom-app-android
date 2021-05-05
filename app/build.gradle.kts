@@ -73,9 +73,13 @@ android {
                         ?: getGradleLocalProperty("AppCenterSecret_debug")
                 )
             )
+            setManifestPlaceholders(mapOf(
+                "maps_api_key_name" to "com.google.android.geo.API_KEY",
+                "maps_api_key_value" to (project.findProperty("maps_api_key") as? String ?: getGradleLocalProperty("Maps_Api_Key_debug"))
+            ))
         }
         getByName(config.AppBuildConfig.Release.name) {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName(config.AppBuildConfig.Release.name)
             manifestPlaceholders(config.AppBuildConfig.Release.manifestPlaceholders)
@@ -93,6 +97,10 @@ android {
                     "APPCENTER_SECRET",
                     quote("unused")
             )
+            setManifestPlaceholders(mapOf(
+                "maps_api_key_name" to "com.google.android.geo.API_KEY",
+                "maps_api_key_value" to (project.findProperty("maps_api_key") as? String ?: getGradleLocalProperty("Maps_Api_Key_release"))
+            ))
         }
     }
     packagingOptions {

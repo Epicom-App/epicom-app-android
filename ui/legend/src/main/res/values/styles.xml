@@ -7,8 +7,9 @@
         <item name="android:color">@color/defaultTextColor</item>
     </style>
 
-    <style name="ui_legend_TextAppearance.Onboarding.HighlightedText" parent="ui_onboarding_TextAppearance.Onboarding.MainText">
+    <style name="ui_legend_TextAppearance.Onboarding.HighlightedText" parent="TextAppearance.App.Text">
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="ui_legend_TextAppearance.Onboarding.MainText" parent="TextAppearance.App.Text">
