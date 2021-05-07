@@ -27,7 +27,7 @@ Created by StringResGen.
 	<string name="map_slider_today">Today</string>
 	<string name="map_slider_title">Date</string>
 	<string name="map_region_info_covid">Covid-19</string>
-	<string name="map_region_info_link_name">District</string>
+	<string name="map_region_info_link_name">Info</string>
 	<string name="map_region_cases">Incidence</string>
 	<string name="map_region_danger_level">Danger level</string>
 	<string name="map_location_callout_title">Recorded stay:</string>
