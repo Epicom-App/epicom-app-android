@@ -129,12 +129,6 @@ class MapViewModel(
                 .collectLatest {
                      updateZoomPositions(positions = it)
                 }
-
-            // Wait no longer than 5 sec for locations loading
-            withTimeout(5000) {
-                _locationsUpdateHandler?.cancel()
-                _locationsUpdateHandler = null
-            }
         }
     }
 

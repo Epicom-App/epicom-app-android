@@ -14,13 +14,11 @@ import org.ebolapp.features.permissions.usecases.InitializePermissioHandlingUseC
 import org.ebolapp.load.regions.usecases.ImportMapRegionsUseCase
 import org.ebolapp.logging.Logging
 import org.ebolapp.logging.usecases.SetupLoggingUseCase
-import org.ebolapp.widget.services.StartWidgetUpdaterUseCase
 import org.koin.core.component.KoinApiExtension
 import kotlin.coroutines.CoroutineContext
 
 @KoinApiExtension
 class RunOnAppStartUseCase(
-    private val context: Context,
     private val setupLoggingUseCase: SetupLoggingUseCase,
     private val setupNotificationChannelsUseCase: SetupNotificationChannelsUseCase,
     private val startRegionCasesPeriodicSyncUseCase: StartRegionCasesPeriodicSyncUseCase,
@@ -28,8 +26,7 @@ class RunOnAppStartUseCase(
     private val locationService: LocationService,
     private val initializePermissionHandlingUseCase: InitializePermissioHandlingUseCase,
     private val setupAppCenterUseCase: SetupAppCenterDiagnosticsUseCase,
-    private val importMapRegionsUseCase: ImportMapRegionsUseCase,
-    private val startWidgetUpdaterUseCase: StartWidgetUpdaterUseCase
+    private val importMapRegionsUseCase: ImportMapRegionsUseCase
 ) : CoroutineScope, Logging {
 
     override val coroutineContext: CoroutineContext = SupervisorJob()
@@ -43,7 +40,6 @@ class RunOnAppStartUseCase(
         locationService.startBackgroundCollection()
         initializePermissionHandlingUseCase()
         launch { importMapRegionsUseCase() }
-        startWidgetUpdaterUseCase()
     }
 }
 

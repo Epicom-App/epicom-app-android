@@ -16,7 +16,7 @@ android {
         targetSdkVersion(config.AppAndroidConfig.Sdk.targetVersion)
         minSdkVersion(config.AppAndroidConfig.Sdk.minimalVersion)
         versionCode = versionCode()
-        versionName = config.AppAndroidConfig.Application.versionName_displayed
+        versionName = "1.0.1" // TODO we need a better way to define the version name in a central place (but outside the common code)
         testInstrumentationRunner = config.AppAndroidConfig.TestRunner.default
         setProperty("archivesBaseName", "$applicationId-$versionCode-v$versionName")
     }

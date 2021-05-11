@@ -11,7 +11,6 @@ import org.ebolapp.features.staticPages.StaticPagesUseCaseFactory
 import org.ebolapp.features.visits.VisitsUseCaseFactory
 import org.ebolapp.load.regions.LoadRegionsUseCaseFactory
 import org.ebolapp.logging.usecases.LoggingUseCaseFactory
-import org.ebolapp.widget.WidgetFactory
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.component.KoinApiExtension
 import org.koin.dsl.module
@@ -78,7 +77,6 @@ val useCasesModule = module {
     // Initializer
     factory {
         RunOnAppStartUseCase(
-            context = get(),
             setupLoggingUseCase = get(),
             setupNotificationChannelsUseCase = get(),
             startRegionCasesPeriodicSyncUseCase = get(),
@@ -87,13 +85,8 @@ val useCasesModule = module {
             initializePermissionHandlingUseCase = get(),
             setupAppCenterUseCase = get(),
             importMapRegionsUseCase = get(),
-            startWidgetUpdaterUseCase = get()
         )
     }
-
-    // Connectivity
-    single { WidgetFactory(context = get(), get()) }
-    factory { get<WidgetFactory>().createStartWidgetUpdaterUseCase() }
 
     // Settings
     single { OnboardingUseCaseFactory.create(androidContext()) }
