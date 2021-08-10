@@ -50,6 +50,10 @@ dependencies {
     implementation(project(":ui:navigation"))
     implementation(project(":ui:legend"))
 
+    // Maps and Location Proxy
+    implementation(project(":location:proxy"))
+    implementation(project(":maps:proxy"))
+
     // AndroidX
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.coreKtx)
@@ -71,10 +75,6 @@ dependencies {
     // Jetpack Navigation
     implementation(Libs.JetPackNavigation.ui)
     implementation(Libs.JetPackNavigation.fragment)
-
-    // Google Play
-    implementation(Libs.GooglePlay.location)
-    implementation(Libs.GooglePlay.map)
 
     // Flow Bindings
     implementation(Libs.FlowBindings.core)

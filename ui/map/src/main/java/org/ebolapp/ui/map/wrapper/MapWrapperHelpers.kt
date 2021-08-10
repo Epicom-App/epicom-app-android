@@ -6,9 +6,9 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.*
+import com.proxy.maps.Map as GoogleMap
+import com.proxy.maps.MapFragment as SupportMapFragment
+import com.proxy.maps.model.*
 import org.ebolapp.features.regions.entities.MapRegionBox
 import org.ebolapp.features.regions.entities.MapRegionWithGeometry
 import org.ebolapp.features.regions.entities.Position

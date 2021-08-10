@@ -39,7 +39,13 @@ include(
     ":features:logging",
     ":features:load_regions",
     ":features:appcenter",
-    ":features:settings"
+    ":features:settings",
+    ":maps:proxy",
+    ":maps:google",
+    ":maps:huawei",
+    ":location:proxy",
+    ":location:google",
+    ":location:huawei"
 )
 
 include(":common:common_code")

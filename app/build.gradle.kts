@@ -115,7 +115,20 @@ android {
         exclude("META-INF/*.kotlin_module")
     }
     lintOptions.isAbortOnError = false
+
+    flavorDimensions("vendor")
+    productFlavors {
+        create("google") {
+            dimension("vendor")
+        }
+        create("huawei") {
+            dimension("vendor")
+        }
+    }
 }
+
+val googleImplementation by configurations
+val huaweiImplementation by configurations
 
 dependencies {
 
@@ -143,6 +156,15 @@ dependencies {
     implementation(project(":features:load_regions"))
     implementation(project(":features:settings"))
 
+    // Platform Services Google/Huawei
+    implementation(project(":maps:proxy"))
+    googleImplementation(project(":maps:google"))
+    huaweiImplementation(project(":maps:huawei"))
+
+    implementation(project(":location:proxy"))
+    googleImplementation(project(":location:google"))
+    huaweiImplementation(project(":location:huawei"))
+
     // Kotlin & Friends
     implementation(Libs.Kotlin.stdLib)
     implementation(Libs.Kotlin.Coroutines.core)
@@ -167,6 +189,7 @@ dependencies {
 
     // Debug only
     debugImplementation(Libs.CanaryLeak.debugCore)
+
 }
 
 fun versionCode(): Int {

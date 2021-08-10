@@ -5,10 +5,10 @@ import android.content.Context
 import android.graphics.Color
 import android.location.Location
 import androidx.core.graphics.ColorUtils
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.GoogleMap.OnCameraMoveStartedListener.REASON_GESTURE
-import com.google.android.gms.maps.model.*
+import com.proxy.maps.CameraUpdateFactory
+import com.proxy.maps.Map as GoogleMap
+import com.proxy.maps.Map.OnCameraMoveStartedListener.Reason.Gesture
+import com.proxy.maps.model.*
 import kotlinx.coroutines.*
 import org.ebolapp.features.regions.entities.MapRegionBox
 import org.ebolapp.features.regions.entities.MapRegionWithGeometry
@@ -57,7 +57,7 @@ class MapWrapper(
         }
         map.setOnCameraMoveStartedListener { reason ->
             when (reason) {
-                REASON_GESTURE -> {
+                Gesture -> {
                     deselectRegionInternal()
                     onMapMovedByUser()
                 }
@@ -134,7 +134,7 @@ class MapWrapper(
     }
 
     fun mapRegionBox(): MapRegionBox {
-        return map.projection.visibleRegion.latLngBounds.toMapRegionBox()
+        return map.projection?.visibleRegion?.latLngBounds?.toMapRegionBox()!!
     }
 
     fun addMapRegions(regions: List<MapRegionWithGeometry>) {
