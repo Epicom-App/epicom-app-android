@@ -9,7 +9,9 @@ buildscript {
         google()
         jcenter()
         //maven(url = "http://s2.appsfactory.de/APPSfactory/Maven" )
+        mavenCentral()
         maven(url = uri("https://plugins.gradle.org/m2/"))
+        maven(url = uri("https://developer.huawei.com/repo/"))
     }
     dependencies {
         classpath(GradleBuildPlugins.gradle)
@@ -35,6 +37,7 @@ allprojects {
 //        maven(url = "http://s2.appsfactory.de/APPSfactory/Maven")
 //        maven(url = "http://oss.jfrog.org/artifactory/oss-snapshot-local")
         maven(url = "https://kotlin.bintray.com/kotlinx/")
+        maven(url = uri("https://developer.huawei.com/repo/"))
     }
 }
 
@@ -72,7 +75,7 @@ subprojects {
     apply(plugin = GradleBuildPlugins.Detekt.plugin)
 
     detekt { ignoreFailures = true }
-    
+
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class)
         .configureEach {
             kotlinOptions {

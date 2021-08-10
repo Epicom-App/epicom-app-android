@@ -1,6 +1,7 @@
 package com.proxy.maps.huawei
 
 import android.graphics.Point
+import com.huawei.hms.maps.CameraUpdateFactory as HuaweiCameraUpdateFactory
 import com.proxy.maps.CameraUpdate
 import com.proxy.maps.DelegateCameraUpdateFactory
 import com.proxy.maps.huawei.models.toHuaweiCameraPosition

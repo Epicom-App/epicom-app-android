@@ -5,14 +5,12 @@ import com.proxy.maps.CameraUpdate
 import com.proxy.maps.Map
 import com.proxy.maps.Projection
 import com.proxy.maps.UiSettings
+import com.proxy.maps.huawei.models.*
 import com.proxy.maps.huawei.models.toHuaweiCircleOptions
 import com.proxy.maps.huawei.models.toHuaweiMarkerOptions
-import com.proxy.maps.model.CameraPosition
-import com.proxy.maps.model.Circle
-import com.proxy.maps.model.CircleOptions
-import com.proxy.maps.model.LatLng
-import com.proxy.maps.model.Marker
-import com.proxy.maps.model.MarkerOptions
+import com.proxy.maps.huawei.models.toLatLng
+import com.proxy.maps.huawei.models.toMarker
+import com.proxy.maps.model.*
 import com.huawei.hms.maps.HuaweiMap as HMap
 import com.huawei.hms.maps.HuaweiMap.OnCameraMoveStartedListener as HOnCameraMoveStartedListener
 
@@ -85,8 +83,20 @@ internal class HuaweiMap(private val huaweiMap: HMap) : Map {
     override fun addMarker(options: MarkerOptions): Marker =
         huaweiMap.addMarker(options.toHuaweiMarkerOptions()).toMarker()
 
+    override fun addPolygon(options: PolygonOptions): Polygon {
+        TODO("Not yet implemented")
+    }
+
+    override fun addPolyline(options: PolylineOptions): Polyline {
+        TODO("Not yet implemented")
+    }
+
     override fun setOnCameraIdleListener(listener: Map.OnCameraIdleListener) =
         huaweiMap.setOnCameraIdleListener { listener.onCameraIdle() }
+
+    override fun setOnCameraIdleListener(onCameraIdle: () -> Unit) {
+        TODO("Not yet implemented")
+    }
 
     override fun setOnMapClickListener(listener: Map.OnMapClickListener) =
         huaweiMap.setOnMapClickListener { huaweiLatLng ->
@@ -117,6 +127,10 @@ internal class HuaweiMap(private val huaweiMap: HMap) : Map {
         onCameraMoveStarted: (Map.OnCameraMoveStartedListener.Reason) -> Unit
     ) = huaweiMap.setOnCameraMoveStartedListener { reason ->
         onCameraMoveStarted(toReason(reason))
+    }
+
+    override fun setOnPolygonClickListener(onPolygonClicked: (Polygon) -> Unit) {
+        TODO("Not yet implemented")
     }
 
     private fun toReason(reason: Int): Map.OnCameraMoveStartedListener.Reason =
@@ -164,6 +178,10 @@ internal class HuaweiMap(private val huaweiMap: HMap) : Map {
                 override fun onCancel() = callback.onCancel()
             }
         )
+    }
+
+    override fun setMapStyle(style: MapStyleOptions) {
+        TODO("Not yet implemented")
     }
 
     override fun clear() = huaweiMap.clear()

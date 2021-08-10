@@ -13,6 +13,7 @@ import com.proxy.location.LocationAvailability
 import com.proxy.location.LocationCallback
 import com.proxy.location.LocationRequest
 import com.proxy.location.Task
+import com.proxy.location.huawei.tasks.toTask
 import com.huawei.hms.location.FusedLocationProviderClient as HuaweiClient
 
 @Keep

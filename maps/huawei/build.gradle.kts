@@ -34,5 +34,5 @@ dependencies {
 
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.Kotlin.stdLib)
-    implementation(Libs.HuaweiAppGallery.maps)
+    implementation("com.huawei.hms:maps:5.3.0.300")
 }

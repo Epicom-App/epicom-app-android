@@ -3,6 +3,7 @@ package com.proxy.location.huawei.tasks
 import com.proxy.location.LocationAvailability
 import com.proxy.location.OnCompleteListener
 import com.proxy.location.Task
+import com.proxy.location.huawei.toLocationAvailability
 import com.huawei.hmf.tasks.Task as HuaweiTask
 import com.huawei.hms.location.LocationAvailability as HuaweiLocationAvailability
 

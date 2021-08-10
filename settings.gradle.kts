@@ -2,8 +2,9 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-        jcenter()
         mavenCentral()
+        jcenter()
+        maven(url = uri("https://developer.huawei.com/repo/"))
     }
     resolutionStrategy {
         eachPlugin {
