@@ -25,6 +25,7 @@ buildscript {
         classpath(GradleBuildPlugins.kotlinSerialization)
         classpath(GradleBuildPlugins.sqlDelight)
         classpath(GradleBuildPlugins.kotlin)
+        classpath("com.huawei.agconnect:agcp:1.5.2.300")
     }
 }
 

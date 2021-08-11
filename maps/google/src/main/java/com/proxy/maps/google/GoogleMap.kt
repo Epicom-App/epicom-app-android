@@ -83,11 +83,8 @@ internal class GoogleMap(private val googleMap: GMap) : Map {
     override fun addMarker(options: MarkerOptions): Marker =
         googleMap.addMarker(options.toGoogleMarkerOptions()).toMarker()
 
-    override fun addPolygon(options: PolygonOptions): Polygon {
-        val googleOptions = options.toGooglePolygonOptions()
-        val pl = googleMap.addPolygon(googleOptions)
-        return pl.toPolygon()
-    }
+    override fun addPolygon(options: PolygonOptions): Polygon =
+        googleMap.addPolygon(options.toGooglePolygonOptions()).toPolygon()
 
     override fun addPolyline(options: PolylineOptions): Polyline =
         googleMap.addPolyline(options.toGooglePolylineOptions()).toPolyline()

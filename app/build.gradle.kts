@@ -7,6 +7,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("com.huawei.agconnect")
 }
 
 android {
@@ -190,6 +191,7 @@ dependencies {
     // Debug only
     debugImplementation(Libs.CanaryLeak.debugCore)
 
+    implementation("com.huawei.agconnect:agconnect-core:1.5.2.300")
 }
 
 fun versionCode(): Int {
@@ -218,3 +220,5 @@ fun getLocalProperty(key: config.EndpointKey, buildType: String = "debug"): Stri
         }
     }
 }
+
+apply(plugin="com.huawei.agconnect")

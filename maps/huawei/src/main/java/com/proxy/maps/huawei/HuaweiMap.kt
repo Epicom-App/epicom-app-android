@@ -83,20 +83,17 @@ internal class HuaweiMap(private val huaweiMap: HMap) : Map {
     override fun addMarker(options: MarkerOptions): Marker =
         huaweiMap.addMarker(options.toHuaweiMarkerOptions()).toMarker()
 
-    override fun addPolygon(options: PolygonOptions): Polygon {
-        TODO("Not yet implemented")
-    }
+    override fun addPolygon(options: PolygonOptions): Polygon =
+        huaweiMap.addPolygon(options.toHuaweiPolygonOptions()).toPolygon()
 
-    override fun addPolyline(options: PolylineOptions): Polyline {
-        TODO("Not yet implemented")
-    }
+    override fun addPolyline(options: PolylineOptions): Polyline =
+        huaweiMap.addPolyline(options.toHuaweiPolylineOptions()).toPolyline()
 
     override fun setOnCameraIdleListener(listener: Map.OnCameraIdleListener) =
         huaweiMap.setOnCameraIdleListener { listener.onCameraIdle() }
 
-    override fun setOnCameraIdleListener(onCameraIdle: () -> Unit) {
-        TODO("Not yet implemented")
-    }
+    override fun setOnCameraIdleListener(onCameraIdle: () -> Unit) =
+        huaweiMap.setOnCameraIdleListener(onCameraIdle)
 
     override fun setOnMapClickListener(listener: Map.OnMapClickListener) =
         huaweiMap.setOnMapClickListener { huaweiLatLng ->
@@ -130,7 +127,9 @@ internal class HuaweiMap(private val huaweiMap: HMap) : Map {
     }
 
     override fun setOnPolygonClickListener(onPolygonClicked: (Polygon) -> Unit) {
-        TODO("Not yet implemented")
+        huaweiMap.setOnPolygonClickListener {
+            onPolygonClicked(it.toPolygon())
+        }
     }
 
     private fun toReason(reason: Int): Map.OnCameraMoveStartedListener.Reason =
@@ -181,7 +180,7 @@ internal class HuaweiMap(private val huaweiMap: HMap) : Map {
     }
 
     override fun setMapStyle(style: MapStyleOptions) {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
     }
 
     override fun clear() = huaweiMap.clear()
